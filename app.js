@@ -1,7 +1,7 @@
-const client = continentful.createClient({
-    space: d,  //fill in;
-    accessToken: d //fill in;
-});
+// const client = continentful.createClient({
+//     space: d,  //fill in;
+//     accessToken: d //fill in;
+// });
 
 
 
@@ -140,7 +140,7 @@ class UI {
     }
     hideCart(){
         cartOverlay.classList.remove("transparentBcg");
-        cartDOM.classList.remover("showCart");
+        cartDOM.classList.remove("showCart");
     }
     cartLogic(){
         //clear cart button
