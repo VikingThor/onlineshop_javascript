@@ -1,6 +1,6 @@
 // const client = continentful.createClient({
-//     space: d,  //fill in;
-//     accessToken: d //fill in;
+//     space: "",
+//     accessToken: ""
 // });
 
 
@@ -26,6 +26,13 @@ let buttonsDOM = [];
 class Products{
     async getProducts(){
         try {
+
+            //  let contentful = await client.getEntries({
+            //     content_type: "ComfyHouseProducts"
+            // });
+           
+            
+
         let result = await fetch('products.json')
         let data = await result.json();
         let products = data.items;
@@ -166,7 +173,7 @@ class UI {
             else if(event.target.classList.contains ("fa-chevron-down")){
                 let lowerAmount = event.target;
                 let id= lowerAmount.dataset.id;
-                let tempItem = cart.find(item.id === id);
+                let tempItem = cart.find(item => item.id === id);
                 tempItem.amount = tempItem.amount -1;
                 if(tempItem.amount > 0){
                     Storage.saveCart(cart);
